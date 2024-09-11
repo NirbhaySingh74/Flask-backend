@@ -1,0 +1,17 @@
+version: 1
+applications:
+  - backend:
+      phases:
+        preBuild:
+          commands:
+            - pip install -r requirements.txt
+        build:
+          commands:
+            - python -m flask run --host=0.0.0.0
+      artifacts:
+        baseDirectory: /
+        files:
+          - "**/*"
+      cache:
+        paths:
+          - "venv/**"
