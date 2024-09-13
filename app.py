@@ -12,7 +12,7 @@ app = Flask(__name__)
 AMPLIFY_URL = os.getenv('AMPLIFY_URL')
 
 # Endpoint to fetch all items
-@app.route('/items', methods=['GET'])
+@app.route('/', methods=['GET'])
 def get_items():
     response = requests.get(AMPLIFY_URL)
     return jsonify(response.json())
